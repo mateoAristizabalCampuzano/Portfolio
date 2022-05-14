@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Portafo<span>lio</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#about">¿Quien Soy?</a></li>
+            <li><a href="#services">Skills</a></li>
+            <li><a href="#resume">Proyectos</a></li>
+        </ul>
+    </header>
+<!--Home-->
+    <section class="home" id="Home">
+        <div class="home-text">
+            <h5>Hola, Soy</h5>
+            <h1>Mateo Aristizabal</h1>
+            <h6>Soy un programador <span>Full-stack</span></h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="{% static 'img/voika.jpg' %}">
+        </div>
+
+    </section>
+
+<!--¿Quien Soy?-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{% static 'img/que-es-full-stack.png' %}">
+        </div>
+        <div class="about-text">
+            <h3>¿Quien Soy?</h3>
+            <h2>Soy estudiante de tecnologia en sistemas</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            <div class="main-btn">
+                <a href="#" class="btn">Contactame</a>
+            </div>
+        </div>
+    </section>
+
+ <!--Skills-->
+    <section class="services" id="services">
+        <div class="center">
+            <h3>Mi Experiencia</h3>
+        </div>
+
+        <div class="service-content">
+            <div class="row">
+                <box-icon name='cast'></box-icon>
+                <h3>SqlServer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+
+            <div class="row">
+                <box-icon name='signal-5'></box-icon>
+                <h3>MySql</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+
+            <div class="row">
+                <box-icon type='logo' name='postgresql'></box-icon>
+                <h3>PostgreSql</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+
+            <div class="row">
+                <box-icon name='java' type='logo' ></box-icon>
+                <h3>Java</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+
+            <div class="row">
+               <box-icon type='logo' name='python'></box-icon>
+                <h3>Python</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+
+            <div class="row">
+                <box-icon name='code-alt'></box-icon>
+                <h3>C#</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra elit magna,
+                vitae ullamcorper ipsum fermentum in.</p>
+            </div>
+        </div>
+    </section>
+
+<!--Proyectos-->
+    <section class="resume" id="resume">
+        <div class="center">
+            <h3>Mis Proyectos</h3>
+        </div>
+        <div class="resume-content">
+            {% for proyecto in proyectos %}
+            <div class="box">
+                <h4>{{proyecto.title}}</h4>
+                <p>{{proyecto.description}}</p>
+                <a href="{{proyecto.url}}" target="_blank">{{proyecto.url}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+<!--jsfile-->
+
+<script type="text/javascript" src="{% static 'js/interactivity.js' %}"></script>
+</body>
+</html>
